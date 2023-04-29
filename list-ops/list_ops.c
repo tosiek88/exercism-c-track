@@ -35,7 +35,8 @@ list_t *append_list(list_t *list1, list_t *list2) {
 }
 
 list_t *filter_list(list_t *list, bool (*filter)(list_element_t)) {
-  list_t *filteredList = malloc(sizeof(list_t));
+
+  list_t *filteredList = new_list(list->length, list->elements);
   filteredList->length = 0;
 
   int current = 0;
@@ -76,6 +77,7 @@ list_element_t foldr_list(list_t *list, list_element_t initial,
                                                   list_element_t)) {
   list_t *reversed = reverse_list(list);
   for (int i = 0; i < (int)reversed->length; i++) {
+    printf("Elements %d\n", reversed->elements[i]);
     initial = foldr(reversed->elements[i], initial);
   }
   return initial;
