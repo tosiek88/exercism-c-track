@@ -1,0 +1,23 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-std=c99",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-pedantic",
+      "-Werror",
+      "-Wmissing-declarations",
+      "-DUNITY_SUPPORT_64",
+      "-DUNITY_OUTPUT_COLOR",
+      "-o",
+      "tests.out",
+      "./isogram.c"
+    ],
+    "directory": "/home/toch/develop/bare_metal_c_programing/exercism/c/isogram",
+    "file": "/home/toch/develop/bare_metal_c_programing/exercism/c/isogram/isogram.c",
+    "output": "/home/toch/develop/bare_metal_c_programing/exercism/c/isogram/tests.out"
+  },
+]

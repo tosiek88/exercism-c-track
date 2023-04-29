@@ -1,0 +1,28 @@
+#include "grade_school.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void init_roster(roster_t *roster) { roster->count = 0; }
+
+int add_student(roster_t *roster, const char *name, uint8_t grade) {
+  student_t potentialStudent = (student_t){grade, ""};
+
+  for (unsigned long i = 0; i < roster->count; i++) {
+    strcpy(potentialStudent.name, name);
+
+    if (strcmp(roster->students[i].name, name) == 0) {
+      return 0;
+    }
+
+    // if (potentialStudent.grade < roster->students[i].grade) {
+    //   student_t tmpStudent = roster->students[i];
+    //   roster->students[i] = potentialStudent;
+    //   potentialStudent = tmpStudent;
+    // }
+  }
+
+  roster->count += 1;
+  roster->students[roster->count] = potentialStudent;
+  return 1;
+}
